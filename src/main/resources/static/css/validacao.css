@@ -1,0 +1,25 @@
+.invalid{
+    border: #F00 solid 1px;
+}
+
+.corErro p{
+    color:#F00;
+}
+
+.invalid:focus{
+    box-shadow:0 0 0 0.2rem rgba(255, 1, 1, 0.25);
+    border: #F00 solid 1px;
+}
+
+.erro{
+    color:#F00;
+}
+
+.valid:focus{
+    box-shadow:0 0 0 0.2rem rgba(5, 122, 1, 0.25);
+    border: teal solid 1px;
+}
+
+.valid{
+    border:teal solid 1px;
+}
