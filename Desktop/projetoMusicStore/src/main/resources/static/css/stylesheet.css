@@ -1,0 +1,139 @@
+.bg-brown{
+    background-color: rgb(63, 26, 5) !important;
+}
+
+.bg-cream{
+    background-color: rgba(207, 191, 159, 0.979) !important;
+}
+
+.brown{
+    color: rgb(63, 26, 5) !important;
+}
+
+.cream{
+    color: rgba(207, 191, 159, 0.979) !important;
+}
+
+.btn-outline-brown {
+    color: rgb(63, 26, 5) !important;
+    background-color: rgba(207, 191, 159, 0.979) !important;
+    background-image: none !important;
+    border-color: rgb(63, 26, 5) !important;
+}
+
+.btn-outline-brown.disabled, .btn-outline-brown:disabled {
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-brown:hover {
+    color: #ffffff !important;
+    background-color: rgb(63, 26, 5) !important;
+    border-color: rgb(63, 26, 5) !important;
+}
+
+.btn-brown:hover {
+    color: #fff !important;
+    outline: none !important;
+}
+
+.btn-outline-cream{
+    color:#ffffff !important;
+    background-color: rgb(63, 26, 5) !important;
+    background-image: none !important;
+    border-color: #ffffff !important;
+}
+
+.btn-outline-cream.disabled, .btn-outline-cream:disabled {
+    color: rgba(207, 191, 159, 0.979) !important;
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-cream:hover {
+    color: rgb(63, 26, 5) !important;
+    background-color: rgba(207, 191, 159, 0.979) !important;
+    border-color: rgb(63, 26, 5) !important;
+}
+
+.btn-cream:hover {
+    color:rgb(63, 26, 5) !important;
+    outline: none !important;
+}
+
+.margin-top{
+    margin-top: 4.6% !important;
+}
+
+.a-hover:hover{
+    color: rgb(63, 26, 5) !important;
+}
+
+.box-shadow-brown:focus{
+    border-color: rgb(63, 26, 5) !important;
+    box-shadow: 0 0 0 0.2rem  rgba(63, 26, 5, 0.63) !important;
+}
+
+.margin-l{
+    margin-left: 15% !important;
+}
+
+.bg-cream-footer{
+    background-color: rgba(189, 165, 118, 0.979) !important;
+}
+
+.fa-2{
+    font-size: 2em !important;
+}
+
+.img-prod{
+    width: 100%;
+}
+
+.img-prod-violao{
+    width: 40%;
+    margin-left: 25%;
+}
+
+.img-prod-capo{
+    width: 87%;
+}
+
+.border-brown{
+    border-style: solid;
+    border-width: 1px ;
+    border-color: rgb(63, 26, 5) !important;
+}
+
+.preco-ant{
+    font-weight: bold !important;
+}
+
+.li {
+    list-style-type: none;
+}
+
+.img-hover:hover{
+    border-style: solid;
+    border-width: 2px ;
+    border-color: rgb(63, 26, 5) !important;
+}
+
+.margin-l1{
+    margin-left: 12%;
+    margin-top: 5%;
+}
+
+.margin-table{
+    margin-left: 8%;
+}
+
+.modal-backdrop{
+    z-index: 0 !important;
+}
+
+.table thead th{
+    border-style: solid;
+    border-width: 2px ;
+    border-color: rgb(63, 26, 5) !important;
+}

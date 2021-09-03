@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="header">
+    <nav class="navbar navbar-expand bg-cream margin-top" th:fragment="navbar2">
+        <ul class="navbar-nav mx-auto">
+            <li class="btn btn-outline-brown nav-link mr-5 h-50 "><a class="nav-link btn-brown p-0 h6 mb-0" href="#">Início</a>
+            </li>
+            <div class="btn btn-outline-brown nav-link mr-5 h-50 dropdown btn-brown dropdown-user">
+                <a href="#"
+                   class="d-block dropdown-toggle nav-link btn-brown p-0 dropdown-toggle h6 mb-0"
+                   id="dropdownCat"
+                   data-bs-toggle="dropdown" aria-expanded="false">Categorias
+                </a>
+                <ul class="dropdown-menu text-small m5-5 text-white"
+                    aria-labelledby="dropdownCat">
+                    <li th:each="categoria : ${listCategorias}">
+                        <a th:href="@{/produto/categoria/{id}(id = ${categoria.id}) }" th:value="${categoria.id}"
+                           th:text="${categoria.nome}"
+                           class="btn-outline-brown dropdown-item btn-brown rounded-top" href="#"></a></li>
+                </ul>
+            </div>
+
+            <li class="btn btn-outline-brown nav-link mr-5 h-50"><a class="nav-link btn-brown p-0 h6 mb-0" href="#">Faça
+                Parte</a></li>
+            <li class="btn btn-outline-brown nav-link mr-5 h-50"><a class="nav-link btn-brown p-0 h6 mb-0" href="#">Sobre</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div th:fragment="produtos">
+
+    <div id="carouselTopo" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block mr-0 w-100" src="images/arte 02.png" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block mr-0 w-100" src="images/04.png" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block mr-0 w-100" src="images/05.png" alt="Third slide">
+            </div>
+        </div>
+    </div>
+
+    <div class="album py-5 bg-light">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 my-4 w-auto" th:each="produto: ${listProdutos}" th:object="${produto}">
+                    <div class="card border-brown"
+                         style="width: 18rem;">
+                        <a th:href="@{/produto/{id}(id = ${produto.id}) }" class="nav-link mb-2">
+                            <img class="img-prod p-2" th:src="${produto.caminhoImg}"
+                                 alt="Imagem de capa do card" th:field="${produto.id}">
+                        </a>
+                        <h5 th:text="${produto.nome}" class="card-title text-center brown"></h5>
+                        <div class="card-body pt-0">
+                            <p th:text="${produto.descricao}" class="card-text"></p>
+                            <p class="mb-0 mt-2 brown"><small>Ref: </small><small th:id="idProduto"
+                                                                                  th:text="${produto.id}"></small></p>
+                            <del>
+                                <small class="preco-ant">R$</small>
+                                <small th:text="${produto.precoAnt}" class="preco-ant"></small></del>
+                            <div class="row ml-5">
+                                <h5 class="text-center mb-0">R$<span th:text="${produto.preco}" id="precoProd"></span>
+                                </h5>
+                                <p class="ml-2 mt-1 h-5 mb-0">à vista</p>
+                            </div>
+                            <p class="text-center text-muted">ou <small>
+                                <span>10x </span>
+                                <span th:text="${produto.preco/10}"></span> cartão de
+                                crédito</small></p>
+                            <a th:href="@{/detalheProduto/{id}(id=${produto.id})}"
+                               class="btn btn-outline-cream nav-link mb-2">Ver detalhes</a>
+                            <a href="#" class="btn btn-outline-cream nav-link"
+                               onclick="adicionaProduto()">Adicionar ao carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

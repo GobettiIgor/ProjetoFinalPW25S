@@ -1,0 +1,37 @@
+<html lang="pt"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/templatePrincipal}">
+<head>
+
+</head>
+<body>
+<section layout:fragment="conteudo">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <form id="formCadastro" class="mt-5" th:action="@{/login/novo}" th:method="POST" th:object="${novoUsuario}">
+                <input th:type="text" th:field="*{nome}" class="fadeIn first mt-5" placeholder="name"/>
+                <div>
+                    <input th:type="text" th:field="*{telefone}" class="fadeIn second telefone"
+                           onchange="validarTelefone(this);"  placeholder="Telefone (00) 0000-0000"/>
+                </div>
+                <div>
+                    <input th:type="text" th:field="*{email}" class="fadeIn third" placeholder="email"/>
+                </div>
+                <div>
+                    <input th:type="text" class="fadeIn fourth" name="cemail" id="cemail" placeholder="Confirme o email"/>
+                </div>
+                <input th:type="text" th:field="*{username}" class="fadeIn fifth" placeholder="Nome de usuário">
+                <input th:type="password" th:field="*{senha}" class="fadeIn sixth" placeholder="password">
+                <input th:type="password" class="csenha fadeIn seventh"
+                       name="csenha" id="csenha" placeholder="Confirme a senha"/>
+
+                <input id="btEnviar" type="submit" class="fadeIn fourth" value="Criar Conta">
+            </form>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

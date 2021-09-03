@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<nav class="navbar bg-brown fixed-top" th:fragment="navbar">
+  <ul class="navbar-nav container-fluid flex-row">
+    <li class="col-1">
+
+    </li>
+    <li class="col-1 pr-0">
+      <a href="/" class="navbar-brand">
+        <img id="logo" th:src="@{/images/Logo.png}" alt="Music Store" title="Music Store" />
+      </a>
+    </li>
+    <li class="col-4 pl-0">
+      <form class="d-flex inline mt-3">
+        <input class="form-control mr-2" type="search" placeholder="O que procura?">
+        <button class="btn btn-outline-cream" type="submit"><i class="fa fa-search p-1"
+                                                               aria-hidden="true"></i></button>
+      </form>
+    </li>
+    <div class="ml-0 col-2">
+
+      <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="mr-4">
+          <span class="text-white" sec:authorize="hasRole('ROLE_CUSTOMER')">Olá, <span sec:authentication="name" class="text-white" ></span>!</span>
+        </div>
+
+        <div class="dropdown text-end dropdown-user ml-4">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle text-white" id="dropdownUser1"
+             data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-user text-white"></i>
+          </a>
+          <ul class="dropdown-menu text-small m5-5 text-white" aria-labelledby="dropdownUser1">
+            <li><a sec:authorize="!isAuthenticated()" class="dropdown-item" th:href="@{/login}">Login</a></li>
+            <li><a sec:authorize="!isAuthenticated()" class="dropdown-item" th:href="@{/login/novo}">Criar conta</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a sec:authorize="hasRole('ROLE_CUSTOMER')" class="dropdown-item" th:href="@{/pedidos}"><i class="fa fa-unlink"></i> Meus Pedidos</a></li>
+            <li><a sec:authorize="hasRole('ROLE_CUSTOMER')" class="dropdown-item" th:href="@{/logout}"><i class="fa fa-unlink"></i> Sair</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modal fade modal-cadastro" tabindex="-1" role="dialog" aria-labelledby="modal-cadastro"
+           aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title brown">Cadastro</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <li class="col-1">
+      <div>
+        <a th:href="@{/compra}" class="btn btn-outline-cream" style="color:white;"><i class="fa fa-shopping-cart p-1"
+                                                                 aria-hidden="true"></i></a>
+      </div>
+    </li>
+    <li class="col-1">
+
+    </li>
+  </ul>
+</nav>
+
+<body>
+<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap-datepicker/1.9.0/dist/js/bootstrap-datepicker.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap-datepicker/1.9.0/dist/locales/bootstrap-datepicker.pt-BR.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/sweetalert2/10.15.5/dist/sweetalert2.min.js}"></script>
+
+<script type="text/javascript">
+  $('.datepicker').datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose: true
+  });
+</script>
+</body>
+</html>
+
+
+
